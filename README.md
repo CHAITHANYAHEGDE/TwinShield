@@ -66,14 +66,19 @@ Visualization:
 ## Architecture
 
 User
+
 ↓
 TwinShield Dashboard
+
 ↓
 FastAPI API Layer
+
 ↓
 Threat Intelligence Engine
+
 ↓
 Risk Forecasting
+
 ↓
 Explainability Layer
 
