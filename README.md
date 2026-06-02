@@ -1,3 +1,20 @@
+## Dashboard Preview
+
+### Normal Traffic
+![Normal](screenshots/normal.png)
+
+### DDoS Attack
+![DDoS](screenshots/ddos.png)
+
+### Data Exfiltration
+![Exfiltration](screenshots/exfiltration.png)
+
+### Botnet Infection
+![Botnet](screenshots/botnet.png)
+
+### AI Mitigation
+![Mitigation](screenshots/mitigation.png)
+
 # TwinShield AI
 
 Autonomous Threat Forecasting Digital Twin
