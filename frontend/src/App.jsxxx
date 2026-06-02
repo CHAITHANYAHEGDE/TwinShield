@@ -1,0 +1,366 @@
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+import {
+  FaShieldAlt,
+  FaRobot,
+  FaExclamationTriangle,
+  FaChartLine
+} from "react-icons/fa";
+
+export default function App() {
+  const cards = [
+    {
+      title: "Current Risk",
+      value: "85",
+      icon: <FaShieldAlt />,
+      color: "#06B6D4"
+    },
+    {
+      title: "Future Risk",
+      value: "92",
+      icon: <FaChartLine />,
+      color: "#8B5CF6"
+    },
+    {
+      title: "Alert",
+      value: "CRITICAL",
+      icon: <FaExclamationTriangle />,
+      color: "#EF4444"
+    },
+    {
+      title: "Root Cause",
+      value: "Flow Rate",
+      icon: <FaRobot />,
+      color: "#F59E0B"
+    }
+  ];
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        background:
+          "radial-gradient(circle at top,#111827 0%,#050816 45%,#020617 100%)",
+        color: "white",
+        padding: "40px",
+        fontFamily:
+          "'Inter', 'Segoe UI', sans-serif"
+      }}
+    >
+      {/* HERO */}
+
+      <div
+        style={{
+          textAlign: "center",
+          marginBottom: "60px"
+        }}
+      >
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{
+            fontSize: "5.5rem",
+            fontWeight: "900",
+            letterSpacing: "8px",
+            marginBottom: "10px",
+            color: "#F8FAFC",
+            textShadow:
+              "0 0 12px rgba(124,58,237,.35)"
+          }}
+        >
+          TWINSHIELD
+        </motion.h1>
+
+        <TypeAnimation
+          sequence={[
+            "AI Threat Forecasting Platform",
+            2000,
+            "Digital Twin Network Intelligence",
+            2000,
+            "Predict. Detect. Defend.",
+            2000
+          ]}
+          repeat={Infinity}
+          style={{
+            color: "#94A3B8",
+            fontSize: "1.4rem"
+          }}
+        />
+      </div>
+
+      {/* METRIC CARDS */}
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns:
+            "repeat(auto-fit,minmax(280px,1fr))",
+          gap: "25px",
+          marginBottom: "40px"
+        }}
+      >
+        {cards.map((card, index) => (
+          <motion.div
+            key={index}
+            whileHover={{
+              y: -8,
+              scale: 1.02
+            }}
+            transition={{
+              duration: 0.25
+            }}
+            style={{
+              background:
+                "rgba(255,255,255,.04)",
+              backdropFilter: "blur(25px)",
+              borderRadius: "24px",
+              padding: "30px",
+              borderLeft: `5px solid ${card.color}`,
+              border:
+                "1px solid rgba(255,255,255,.08)",
+              boxShadow:
+                "0 10px 30px rgba(0,0,0,.35)"
+            }}
+          >
+            <div
+              style={{
+                color: card.color,
+                fontSize: "2rem",
+                marginBottom: "15px"
+              }}
+            >
+              {card.icon}
+            </div>
+
+            <div
+              style={{
+                color: "#CBD5E1",
+                fontSize: "1.1rem",
+                marginBottom: "12px"
+              }}
+            >
+              {card.title}
+            </div>
+
+            <div
+              style={{
+                fontSize:
+                  card.value.length > 10
+                    ? "2.5rem"
+                    : "3.5rem",
+                fontWeight: "700"
+              }}
+            >
+              {card.value}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* MAIN GRID */}
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "2fr 1fr",
+          gap: "25px",
+          marginBottom: "25px"
+        }}
+      >
+        {/* RISK PANEL */}
+
+        <motion.div
+          whileHover={{ scale: 1.01 }}
+          style={{
+            background:
+              "rgba(255,255,255,.03)",
+            borderRadius: "25px",
+            padding: "30px",
+            minHeight: "420px",
+            border:
+              "1px solid rgba(255,255,255,.06)"
+          }}
+        >
+          <h2
+            style={{
+              marginBottom: "20px",
+              color: "#E2E8F0"
+            }}
+          >
+            Threat Overview
+          </h2>
+
+          <div
+            style={{
+              height: "300px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "5rem",
+              fontWeight: "900",
+              color: "#8B5CF6"
+            }}
+          >
+            92%
+          </div>
+
+          <div
+            style={{
+              textAlign: "center",
+              color: "#94A3B8"
+            }}
+          >
+            Predicted Future Risk
+          </div>
+        </motion.div>
+
+        {/* AI INSIGHTS */}
+
+        <motion.div
+          whileHover={{ scale: 1.01 }}
+          style={{
+            background:
+              "rgba(255,255,255,.03)",
+            borderRadius: "25px",
+            padding: "30px",
+            border:
+              "1px solid rgba(255,255,255,.06)"
+          }}
+        >
+          <h2
+            style={{
+              marginBottom: "25px"
+            }}
+          >
+            AI Insights
+          </h2>
+
+          <div
+            style={{
+              marginBottom: "20px"
+            }}
+          >
+            <h4
+              style={{
+                color: "#8B5CF6"
+              }}
+            >
+              Forecast
+            </h4>
+
+            <p
+              style={{
+                color: "#CBD5E1"
+              }}
+            >
+              Threat level expected to
+              remain elevated.
+            </p>
+          </div>
+
+          <div
+            style={{
+              marginBottom: "20px"
+            }}
+          >
+            <h4
+              style={{
+                color: "#06B6D4"
+              }}
+            >
+              Primary Driver
+            </h4>
+
+            <p>Flow Rate</p>
+          </div>
+
+          <div>
+            <h4
+              style={{
+                color: "#22C55E"
+              }}
+            >
+              Confidence
+            </h4>
+
+            <p>91%</p>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* BOTTOM PANELS */}
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "25px"
+        }}
+      >
+        <motion.div
+          whileHover={{ scale: 1.01 }}
+          style={{
+            background:
+              "rgba(255,255,255,.03)",
+            borderRadius: "25px",
+            minHeight: "280px",
+            padding: "25px",
+            border:
+              "1px solid rgba(255,255,255,.06)"
+          }}
+        >
+          <h2>Feature Importance</h2>
+
+          <div
+            style={{
+              marginTop: "30px"
+            }}
+          >
+            Flow Rate ██████████████ 65%
+
+            <br />
+            <br />
+
+            Duration ██████ 22%
+
+            <br />
+            <br />
+
+            Active Time ██ 7%
+
+            <br />
+            <br />
+
+            Packet Size █ 5%
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ scale: 1.01 }}
+          style={{
+            background:
+              "rgba(255,255,255,.03)",
+            borderRadius: "25px",
+            minHeight: "280px",
+            padding: "25px",
+            border:
+              "1px solid rgba(255,255,255,.06)"
+          }}
+        >
+          <h2>Risk Timeline</h2>
+
+          <div
+            style={{
+              marginTop: "40px",
+              color: "#8B5CF6",
+              fontSize: "1.4rem"
+            }}
+          >
+            ▂▃▅▇█▆▇█▇▆▇█
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
